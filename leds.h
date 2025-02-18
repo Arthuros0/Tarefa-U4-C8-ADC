@@ -4,6 +4,7 @@
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
 #include "hardware/adc.h"
+#include "ssd1306.h"
 
 #define VERDE 11
 #define AZUL 12
@@ -16,8 +17,8 @@
 
 void pwm_setup();
 void joystick_setup();
-void joystick_pwm_control();
-int32_t abs(int32_t valor);
+void joystick_pwm_control(ssd1306_t *ssd);
+//int32_t abs(int32_t valor);
 
 
 

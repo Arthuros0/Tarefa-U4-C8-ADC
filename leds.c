@@ -25,7 +25,7 @@ void joystick_setup(){
   adc_gpio_init(X_JOY);
 }
 
-void joystick_pwm_control(){
+void joystick_pwm_display_control(ssd1306_t *ssd){
 
   adc_select_input(Y_CHANNEL);
   uint32_t valor_adc=adc_read();
@@ -35,7 +35,14 @@ void joystick_pwm_control(){
   }else{
     pwm_set_gpio_level(AZUL,0);
   }
-  
+
+  uint8_t pos_y=(4095-valor_adc)/64; //Corrige inversão do eixo y do joystick;
+  if(pos_y > 55){
+    pos_y=55;
+  }else if(pos_y < 10){
+    pos_y=10;
+  }
+
   adc_select_input(X_CHANNEL);
   valor_adc=adc_read();
   printf("VRX: %d\n", valor_adc);
@@ -44,13 +51,13 @@ void joystick_pwm_control(){
   }else{
     pwm_set_gpio_level(VERMELHO,0);
   }
-  
-}
-
-int32_t abs(int32_t valor){
-  if (valor<0)
-  {
-    return valor*(-1);
+  uint8_t pos_x=valor_adc/32;
+  if(pos_x > 118){
+    pos_x=118;
+  }else if (pos_x < 10){
+    pos_x=10;
   }
-  return valor;
+  
+  draw_point(ssd,pos_x,pos_y,true);
+  ssd1306_send_data(ssd);
 }
