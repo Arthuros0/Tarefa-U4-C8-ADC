@@ -1,4 +1,4 @@
-# Projeto: Controle de LEDs e Joystick com RP2040
+# Tarefa: Controle de LEDs e Joystick com RP2040
 
 Este repositório contém o código e documentação do projeto desenvolvido para explorar conversores A/D e funcionalidades do RP2040 usando a placa BitDogLab.
 
