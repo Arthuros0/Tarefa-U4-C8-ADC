@@ -35,7 +35,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(Tarefa_adc main.c leds.c)
+add_executable(Tarefa_adc main.c leds.c ssd1306.c)
 
 pico_set_program_name(Tarefa_adc "Tarefa_adc")
 pico_set_program_version(Tarefa_adc "0.1")
@@ -57,6 +57,7 @@ target_include_directories(Tarefa_adc PRIVATE
 target_link_libraries(Tarefa_adc
     hardware_adc
     hardware_pwm
+    hardware_i2c
         )
 
 pico_add_extra_outputs(Tarefa_adc)
