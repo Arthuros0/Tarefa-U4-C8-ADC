@@ -15,11 +15,12 @@
 #define Y_CHANNEL 0
 #define X_CHANNEL 1
 
+extern uint slice_azul, slice_vermelho;
+extern volatile bool led_pwm;
+
+void init_led(uint8_t pin);
 void pwm_setup();
 void joystick_setup();
-void joystick_pwm_control(ssd1306_t *ssd);
-//int32_t abs(int32_t valor);
-
-
+void joystick_pwm_display_control(ssd1306_t *ssd);
 
 #endif
