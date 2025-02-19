@@ -7,6 +7,14 @@ Este repositório contém o código e documentação do projeto desenvolvido par
 - Controlar LEDs RGB com PWM baseado nos valores de um joystick.
 - Representar graficamente a posição do joystick no display SSD1306 via protocolo I2C.
 
+## **Vídeo de Demonstração do Projeto**
+Confira a demonstração da tarefa clicando no ícone abaixo:
+
+<a href="https://youtube.com/shorts/1kPjNn21gPU">
+  <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube" />
+</a>
+
+
 ## Funcionalidades
 - **Controle de LEDs RGB**:
   - Brilho do LED Azul ajustado pelo eixo Y do joystick.
